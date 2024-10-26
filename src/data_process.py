@@ -67,6 +67,7 @@ def main():
     output_dir = "/Users/circle/PycharmProjects/AI4S/src/data_processed/"
 
     # Define subject mapping to filenames
+    # filename:subject
     subject_map = {
         "English": "English",
         "Biology": "Biology",
@@ -76,7 +77,7 @@ def main():
         "History": "History",
         "Math": "Math",
         "Physics": "Physics",
-        "Politics": "Politics"
+        "Political": "Politics" #注意原文件是Political
     }
 
     # Process both directories
