@@ -11,6 +11,7 @@ prompt_template = "你是一个{}专家，解决所给题目"
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
 
+
 # Process each JSONL file in the input directory
 for filename in os.listdir(input_dir):
     if filename.endswith(".jsonl"):
@@ -19,7 +20,6 @@ for filename in os.listdir(input_dir):
 
         # Output file path based on the subject
         output_filepath = os.path.join(output_dir, f"{subject}.jsonl")
-
         with open(filepath, 'r', encoding='utf-8') as f_in, open(output_filepath, 'a', encoding='utf-8') as f_out:
             for line in f_in:
                 data = json.loads(line.strip())
