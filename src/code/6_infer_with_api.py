@@ -30,7 +30,7 @@ def vllm_chat(model_name, query):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": query}
         ],
-        max_tokens=512,  # 设置返回结果的最大 token 数
+        max_tokens=5000,  # 设置返回结果的最大 token 数
         temperature=0  # 设置生成的温度，控制生成内容的多样性
     )
     return completion.choices[0].message.content
@@ -73,7 +73,7 @@ def run_inference(model_name_or_path, input_path, output_path, call):
         # Save each JSON object on a new line in JSONL format
         with open(output_file, 'w', encoding='utf-8') as file:
             for input_text in tqdm(data):
-                instruct = input_text['instruct'] + " Question: " + input_text['input']
+                instruct = input_text['instruct'] + " ###题目###\n " + input_text['input']
 
                 if call == "vllm":
                     response = call_func(model_name_or_path, instruct)
