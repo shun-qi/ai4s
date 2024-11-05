@@ -30,6 +30,7 @@ for model in model_folders:
                 match = re.search(r'处理(\w+\.jsonl)文件耗时：(\d+)小时\s+(\d+)分钟\s+(\d+)秒', line)
                 if match:
                     subject = match.group(1).replace('.jsonl', '')
+
                     hours = int(match.group(2))
                     minutes = int(match.group(3))
                     seconds = int(match.group(4))
@@ -77,7 +78,7 @@ ax.set_xticklabels(labels, fontproperties=font_prop)  # 设置 x 轴标签
 
 # 添加图例
 plt.legend(loc='upper right', bbox_to_anchor=(1.1, 1.1), prop=font_prop)
-plt.title('各模型学科平均每道题处理时间雷达图', fontproperties=font_prop)
+plt.title('各模型各学科平均每道题处理时间雷达图(单位秒)', fontproperties=font_prop)
 
 # 保存雷达图
 output_path = "../data/6_graphs/average_time_radar_chart.png"
