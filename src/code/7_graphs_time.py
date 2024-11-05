@@ -3,11 +3,16 @@ import os
 import re
 import numpy as np
 import matplotlib.pyplot as plt
+import json
 from matplotlib import font_manager
 
 # 设置中文字体
 font_path = '/System/Library/Fonts/STHeiti Light.ttc'  # 替换为你系统中的字体路径
 font_prop = font_manager.FontProperties(fname=font_path)
+
+# 加载学科题目数量
+with open("../subject_nums_map.json", "r") as file:
+    subject_nums = json.load(file)
 
 # 初始化一个空列表以存储 DataFrame 的数据
 data = []
@@ -22,7 +27,6 @@ for model in model_folders:
 
         with open(time_count_path, 'r', encoding='utf-8') as file:
             for line in file:
-                # 正则表达式匹配处理时间
                 match = re.search(r'处理(\w+\.jsonl)文件耗时：(\d+)小时\s+(\d+)分钟\s+(\d+)秒', line)
                 if match:
                     subject = match.group(1).replace('.jsonl', '')
@@ -30,7 +34,13 @@ for model in model_folders:
                     minutes = int(match.group(3))
                     seconds = int(match.group(4))
                     total_time = hours * 3600 + minutes * 60 + seconds
-                    model_data[subject] = total_time
+
+                    # 计算每道题的平均时间
+                    if subject in subject_nums:
+                        average_time = total_time / subject_nums[subject]
+                        model_data[subject] = average_time
+                    else:
+                        model_data[subject] = 0  # 如果找不到学科，设为0
 
         data.append(model_data)
 
@@ -67,15 +77,12 @@ ax.set_xticklabels(labels, fontproperties=font_prop)  # 设置 x 轴标签
 
 # 添加图例
 plt.legend(loc='upper right', bbox_to_anchor=(1.1, 1.1), prop=font_prop)
-plt.title('各模型学科处理时间雷达图', fontproperties=font_prop)
-
-# 确保输出目录存在
-output_dir = "../data/6_graphs"
-os.makedirs(output_dir, exist_ok=True)
+plt.title('各模型学科平均每道题处理时间雷达图', fontproperties=font_prop)
 
 # 保存雷达图
-output_file = os.path.join(output_dir, "time_radar_chart.png")
-plt.savefig(output_file, bbox_inches='tight', dpi=300)  # 保存图形
+output_path = "../data/6_graphs/average_time_radar_chart.png"
+os.makedirs("../data/6_graphs", exist_ok=True)  # 确保输出目录存在
+plt.savefig(output_path, bbox_inches='tight', dpi=300)  # 保存图形
 plt.close()  # 关闭图形以释放内存
 
-print(f"雷达图已保存到：{output_file}")
+print(f"雷达图已保存到：{output_path}")
