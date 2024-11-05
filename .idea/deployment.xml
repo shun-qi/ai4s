@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="PublishConfigData" autoUpload="Always" serverName="root@58.57.119.57:10108 agent">
-=======
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
->>>>>>> 7298b6e67c9bf9badf8dd3c557bfc875047b2a15
+  <component name="PublishConfigData" autoUpload="Always" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="root@58.57.119.57:10003 agent" confirmBeforeDeletion="false" autoUploadExternalChanges="true">
+    <option name="confirmBeforeDeletion" value="false" />
     <serverData>
       <paths name="root@58.57.119.57:10003 agent">
         <serverdata>
@@ -14,9 +11,6 @@
         </serverdata>
       </paths>
     </serverData>
-<<<<<<< HEAD
     <option name="myAutoUpload" value="ALWAYS" />
-=======
->>>>>>> 7298b6e67c9bf9badf8dd3c557bfc875047b2a15
   </component>
 </project>

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import time
 
-=======
->>>>>>> 7298b6e67c9bf9badf8dd3c557bfc875047b2a15
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import os
 import numpy as np
@@ -14,11 +11,6 @@ from openai import OpenAI
 import openai
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7298b6e67c9bf9badf8dd3c557bfc875047b2a15
 # 推理
 
 # vllm deployment test
@@ -64,10 +56,9 @@ def load_json(datapath):
 def run_inference(model_name_or_path, input_path, output_path, call):
     ensure_dir_exists(output_path)
     for file_name in os.listdir(input_path):
-<<<<<<< HEAD
+
         s_time=time.time() #记录开始时间方便后面评估
-=======
->>>>>>> 7298b6e67c9bf9badf8dd3c557bfc875047b2a15
+
         # Read the input data
         data = load_json(os.path.join(input_path, file_name))
 
@@ -91,7 +82,7 @@ def run_inference(model_name_or_path, input_path, output_path, call):
 
                 input_text['inference'] = response
                 file.write(json.dumps(input_text, ensure_ascii=False) + '\n')
-<<<<<<< HEAD
+
         #计算时间
         e_time=time.time()
         time_count=e_time-s_time
@@ -99,9 +90,7 @@ def run_inference(model_name_or_path, input_path, output_path, call):
         min,sec=divmod(rem,60)
         with open(os.path.join(output_path,"time_count.txt"), 'a', encoding='utf-8') as file:
             file.write(f"处理{file_name.split(',')[0]}文件耗时：{int(h)}小时 {int(min)}分钟 {int(sec)}秒"+'\n')
-=======
 
->>>>>>> 7298b6e67c9bf9badf8dd3c557bfc875047b2a15
 
 if __name__ == '__main__':
     fire.Fire(run_inference)
