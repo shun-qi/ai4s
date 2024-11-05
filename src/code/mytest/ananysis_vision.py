@@ -28,8 +28,7 @@ fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
 for i, row in df.iterrows():
     values = row.drop('Model').values.flatten().tolist()
     values += values[:1]
-    ax.plot(angles, values, label=row['Model'])
-    ax.fill(angles, values, alpha=0.25)
+    ax.plot(angles, values, label=row['Model'])  # 仅绘制轮廓线
 
 # 设置图标和标题
 ax.set_theta_offset(np.pi / 2)
@@ -57,4 +56,3 @@ plt.ylim(0, 10)  # 假设总评分的范围是0到10
 # 保存柱状图为 PNG 文件
 plt.savefig('bar_chart.png', bbox_inches='tight')  # 'tight' 使得图形不被裁剪
 plt.close()  # 关闭柱状图
-
