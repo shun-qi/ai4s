@@ -1,8 +1,8 @@
 import os
 import json
 # Input and output directories
-input_dir = "../data/0_raw"
-output_dir = "../data/3_QA_2"
+input_dir = "../data/0_raw/23-24"
+output_dir = "../data/3_QA_2/23-24"
 
 # Define a prompt template
 prompt_template ="""
@@ -57,7 +57,8 @@ for filename in os.listdir(input_dir):
         with open(filepath, 'r', encoding='utf-8') as f_in, open(output_filepath, 'w', encoding='utf-8') as f_out:
             for line in f_in:
                 data = json.loads(line.strip())
-                data["instruct"] = prompt_template.format(ch_subject=ch_subject)  # Populate instruct based on filename
-                f_out.write(json.dumps(data, ensure_ascii=False) + "\n")
+                if data["modality"]=='t':   #先仅推理单模态的题目
+                    data["instruct"] = prompt_template.format(ch_subject=ch_subject)  # Populate instruct based on filename
+                    f_out.write(json.dumps(data, ensure_ascii=False) + "\n")
 
 print("Processing complete! JSONL files have been created for each subject based on filename.")
