@@ -21,6 +21,39 @@
 突然发现有2个一样的进程在运行。我record 文件也显示2次，我没管，把record记录重复的那一行删除了。
 原因就是多个进程同时对一个文件进行写发生了数据覆盖错误。
 本地部署一个大模型，多个不同任务的进程同时请求大模型，是不会发生错误的。但是多个进程同时对一个文件进行写是会发生错误的
+记录文件中：
+处理Politics.jsonl文件耗时：2小时 8分钟 4秒
+处理Politics。jsonl文件耗时：2小时 24分钟 15秒
+处理Physics。jsonl文件耗时：0小时 55分钟 15秒
+处理Physics。jsonl文件耗时：0小时 42分钟 30秒
+处理English。jsonl文件耗时：2小时 17分钟 27秒
+处理Eng lish。jsonl文件耗时：2小时 17分钟 6秒
+....
 
 10.大模型返回的响应数据(json格式)不规范、导致解析json失败。
 解决：使用json5库来进行解析，可以解析更加宽松的json格式，常用于大模型返回的json数据的解析。
+
+11.使用pandas库和matplotlib可以生成柱状图和雷达图
+
+12.配置环境很重要，一定要用conda，不然后面会遇到各种依赖问题！！！！！！！！
+
+13.
+1）.通过openai的框架，可以实现调用不同的厂家的大模型时，使用统一的方式，只用更改模型名称，请求url和apikey
+2）.通过apikey中介网站，可以实现统一的请求url，与统一的apikey，仅仅更改模型名称。 模型名称使用中介网站特定的名称，url也是，参看中介网站的使用法则。
+
+14.提示没有库
+  File "/root/anaconda3/envs/qwen2_vllm/lib/python3.11/site-packages/modelscope/msdatasets/utils/oss_utils.py", line 7, in <module>
+ModuleNotFoundError: No module named 'oss2'
+    import oss2
+ModuleNotFoundError: No module named 'oss2'
+一开始一直报错，后来才发现代码中引用中引用了clip的什么库。。。导致后面install了oss2，又回弹出其他的错误。所以养成习惯，在pycharm中引用为灰色（没有使用的包）直接删除了，不然可能会出现错误引用的情况。
+
+15.Pycharm里面git push时一直显示上传失败：
+注意梯子还是规则模式即可，主要解决方式，退出pycharm，再重新打开pycharm即可.不用退出重新push一次可能也行，可能与网络稳定性有关
+
+16.push失败
+主要原因：在github上手动改了下readme文件，此时相当于另外用户进行了操作，本地push会被拒绝
+! [rejected] main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/shun-qi/ai4s.git' hint: Updates were rejected because the tip of your current branch is behind hint: its remote
+
+因为本地没有最新版本的记录，先要pull，然后手动选择合并方式，再进行push
