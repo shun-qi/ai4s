@@ -81,7 +81,7 @@ plt.legend(loc='upper right', bbox_to_anchor=(1.1, 1.1), prop=font_prop)
 plt.title('各模型各学科平均每道题处理时间雷达图(单位秒)', fontproperties=font_prop)
 
 # 保存雷达图
-output_path = "../data/6_graphs/average_time_radar_chart.png"
+output_path = "../data/6_graphs/23-24/average_time_radar_chart.png"
 os.makedirs("../data/6_graphs", exist_ok=True)  # 确保输出目录存在
 plt.savefig(output_path, bbox_inches='tight', dpi=300)  # 保存图形
 plt.close()  # 关闭图形以释放内存

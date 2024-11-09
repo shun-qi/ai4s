@@ -3,4 +3,4 @@
 3.运行result_json.py
 4.运行myplot.py
 
-使用这个代码需要更改下输入输出路径，队友写的
+使用这个代码需要更改下输入输出路径，队友写的,把要评测的结果文件放到5_analysis文件夹下，如文件中已经给了示例qwen2_7b_instruct和qwen2_7b_instruct_simple_prompt两个文件夹，说明要对这2个文件中的数据进行对比分析

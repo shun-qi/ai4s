@@ -1,0 +1,4 @@
+Error in line 257: <string>:12 Unexpected "*" at column 1
+Error in line 271: <string>:3 Unexpected "注" at column 1
+Error in line 273: <string>:3 Unexpected "注" at column 1
+Error in line 278: <string>:3 Unexpected "注" at column 1

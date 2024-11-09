@@ -1,0 +1,222 @@
+{
+    "qwen2_7b_instruct": {
+        "Biology.jsonl": {
+            "correctness_avg": 5.368421052631579,
+            "completeness_avg": 4.338345864661654,
+            "innovation_avg": 2.6353383458646618,
+            "reasoning_avg": 4.293233082706767,
+            "correct_rate": 0.6954887218045113,
+            "level_rate": [
+                0.10902255639097744,
+                0.8609022556390977,
+                0.03007518796992481
+            ]
+        },
+        "Chemistry.jsonl": {
+            "correctness_avg": 3.265151515151515,
+            "completeness_avg": 4.136363636363637,
+            "innovation_avg": 2.6363636363636362,
+            "reasoning_avg": 4.03030303030303,
+            "correct_rate": 0.5,
+            "level_rate": [
+                0.045454545454545456,
+                0.9393939393939394,
+                0.015151515151515152
+            ]
+        },
+        "Chinese.jsonl": {
+            "correctness_avg": 3.661654135338346,
+            "completeness_avg": 3.2518796992481205,
+            "innovation_avg": 2.142857142857143,
+            "reasoning_avg": 3.2406015037593985,
+            "correct_rate": 0.40225563909774437,
+            "level_rate": [
+                0.18045112781954886,
+                0.6729323308270677,
+                0.14285714285714285
+            ]
+        },
+        "English.jsonl": {
+            "correctness_avg": 0.9878787878787879,
+            "completeness_avg": 3.2151515151515153,
+            "innovation_avg": 1.8727272727272728,
+            "reasoning_avg": 3.2151515151515153,
+            "correct_rate": 0.5454545454545454,
+            "level_rate": [
+                0.05454545454545454,
+                0.5848484848484848,
+                0.3575757575757576
+            ]
+        },
+        "Geography.jsonl": {
+            "correctness_avg": 3.870967741935484,
+            "completeness_avg": 4.338709677419355,
+            "innovation_avg": 3.274193548387097,
+            "reasoning_avg": 4.32258064516129,
+            "correct_rate": 0.6290322580645161,
+            "level_rate": [
+                0.3225806451612903,
+                0.6451612903225806,
+                0.03225806451612903
+            ]
+        },
+        "History.jsonl": {
+            "correctness_avg": 3.1666666666666665,
+            "completeness_avg": 3.891304347826087,
+            "innovation_avg": 2.8526570048309177,
+            "reasoning_avg": 3.9106280193236715,
+            "correct_rate": 0.6086956521739131,
+            "level_rate": [
+                0.34299516908212563,
+                0.6497584541062802,
+                0.004830917874396135
+            ]
+        },
+        "Math.jsonl": {
+            "correctness_avg": 3.9148681055155876,
+            "completeness_avg": 4.398081534772182,
+            "innovation_avg": 3.0419664268585134,
+            "reasoning_avg": 4.316546762589928,
+            "correct_rate": 0.5815347721822542,
+            "level_rate": [
+                0.017985611510791366,
+                0.9676258992805755,
+                0.014388489208633094
+            ]
+        },
+        "Physics.jsonl": {
+            "correctness_avg": 3.618181818181818,
+            "completeness_avg": 4.445454545454545,
+            "innovation_avg": 3.1272727272727274,
+            "reasoning_avg": 4.372727272727273,
+            "correct_rate": 0.5,
+            "level_rate": [
+                0.02727272727272727,
+                0.9727272727272728,
+                0.0
+            ]
+        },
+        "Politics.jsonl": {
+            "correctness_avg": 3.4722955145118735,
+            "completeness_avg": 4.4511873350923485,
+            "innovation_avg": 3.071240105540897,
+            "reasoning_avg": 4.45910290237467,
+            "correct_rate": 0.7730870712401056,
+            "level_rate": [
+                0.2691292875989446,
+                0.7255936675461742,
+                0.005277044854881266
+            ]
+        }
+    },
+    "qwen2_7b_instruct_simple_prompt": {
+        "Biology.jsonl": {
+            "correctness_avg": 5.720754716981132,
+            "completeness_avg": 4.50188679245283,
+            "innovation_avg": 2.849056603773585,
+            "reasoning_avg": 4.479245283018868,
+            "correct_rate": 0.7245283018867924,
+            "level_rate": [
+                0.18490566037735848,
+                0.8,
+                0.01509433962264151
+            ]
+        },
+        "Chemistry.jsonl": {
+            "correctness_avg": 4.3106060606060606,
+            "completeness_avg": 4.295454545454546,
+            "innovation_avg": 2.7803030303030303,
+            "reasoning_avg": 4.265151515151516,
+            "correct_rate": 0.6439393939393939,
+            "level_rate": [
+                0.03787878787878788,
+                0.9545454545454546,
+                0.007575757575757576
+            ]
+        },
+        "Chinese.jsonl": {
+            "correctness_avg": 4.1992481203007515,
+            "completeness_avg": 3.2142857142857144,
+            "innovation_avg": 2.142857142857143,
+            "reasoning_avg": 3.244360902255639,
+            "correct_rate": 0.4323308270676692,
+            "level_rate": [
+                0.22932330827067668,
+                0.6578947368421053,
+                0.10526315789473684
+            ]
+        },
+        "English.jsonl": {
+            "correctness_avg": 1.5060240963855422,
+            "completeness_avg": 3.286144578313253,
+            "innovation_avg": 1.7680722891566265,
+            "reasoning_avg": 3.2650602409638556,
+            "correct_rate": 0.5662650602409639,
+            "level_rate": [
+                0.02710843373493976,
+                0.7078313253012049,
+                0.26506024096385544
+            ]
+        },
+        "Geography.jsonl": {
+            "correctness_avg": 2.5483870967741935,
+            "completeness_avg": 3.5,
+            "innovation_avg": 2.935483870967742,
+            "reasoning_avg": 3.806451612903226,
+            "correct_rate": 0.5161290322580645,
+            "level_rate": [
+                0.43548387096774194,
+                0.5645161290322581,
+                0.0
+            ]
+        },
+        "History.jsonl": {
+            "correctness_avg": 2.9106280193236715,
+            "completeness_avg": 3.5555555555555554,
+            "innovation_avg": 2.4009661835748792,
+            "reasoning_avg": 3.5845410628019323,
+            "correct_rate": 0.6231884057971014,
+            "level_rate": [
+                0.4468599033816425,
+                0.5434782608695652,
+                0.0
+            ]
+        },
+        "Math.jsonl": {
+            "correctness_avg": 5.829476248477467,
+            "completeness_avg": 4.775883069427527,
+            "innovation_avg": 3.169305724725944,
+            "reasoning_avg": 4.749086479902558,
+            "correct_rate": 0.8708891595615104,
+            "level_rate": [
+                0.020706455542021926,
+                0.97442143727162,
+                0.0048721071863581
+            ]
+        },
+        "Physics.jsonl": {
+            "correctness_avg": 4.8558558558558556,
+            "completeness_avg": 4.423423423423423,
+            "innovation_avg": 2.918918918918919,
+            "reasoning_avg": 4.423423423423423,
+            "correct_rate": 0.6666666666666666,
+            "level_rate": [
+                0.036036036036036036,
+                0.954954954954955,
+                0.009009009009009009
+            ]
+        },
+        "Politics.jsonl": {
+            "correctness_avg": 3.2526315789473683,
+            "completeness_avg": 4.184210526315789,
+            "innovation_avg": 2.6736842105263157,
+            "reasoning_avg": 4.2026315789473685,
+            "correct_rate": 0.7657894736842106,
+            "level_rate": [
+                0.4473684210526316,
+                0.5421052631578948,
+                0.007894736842105263
+            ]
+        }
+    }
+}

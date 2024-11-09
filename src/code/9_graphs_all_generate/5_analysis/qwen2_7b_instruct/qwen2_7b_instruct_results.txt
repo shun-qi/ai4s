@@ -1,0 +1,90 @@
+File: Biology.jsonl
+Correctness Average: 5.368421052631579
+Completeness Average: 4.338345864661654
+Innovation Average: 2.6353383458646618
+Reasoning Average: 4.293233082706767
+Correct Rate: 0.6954887218045113
+Level Rate (大学, 高中, 其他): [0.10902255639097744, 0.8609022556390977, 0.03007518796992481]
+
+--------------------------------------------------
+
+File: Chemistry.jsonl
+Correctness Average: 3.265151515151515
+Completeness Average: 4.136363636363637
+Innovation Average: 2.6363636363636362
+Reasoning Average: 4.03030303030303
+Correct Rate: 0.5
+Level Rate (大学, 高中, 其他): [0.045454545454545456, 0.9393939393939394, 0.015151515151515152]
+
+--------------------------------------------------
+
+File: Chinese.jsonl
+Correctness Average: 3.661654135338346
+Completeness Average: 3.2518796992481205
+Innovation Average: 2.142857142857143
+Reasoning Average: 3.2406015037593985
+Correct Rate: 0.40225563909774437
+Level Rate (大学, 高中, 其他): [0.18045112781954886, 0.6729323308270677, 0.14285714285714285]
+
+--------------------------------------------------
+
+File: English.jsonl
+Correctness Average: 0.9878787878787879
+Completeness Average: 3.2151515151515153
+Innovation Average: 1.8727272727272728
+Reasoning Average: 3.2151515151515153
+Correct Rate: 0.5454545454545454
+Level Rate (大学, 高中, 其他): [0.05454545454545454, 0.5848484848484848, 0.3575757575757576]
+
+--------------------------------------------------
+
+File: Geography.jsonl
+Correctness Average: 3.870967741935484
+Completeness Average: 4.338709677419355
+Innovation Average: 3.274193548387097
+Reasoning Average: 4.32258064516129
+Correct Rate: 0.6290322580645161
+Level Rate (大学, 高中, 其他): [0.3225806451612903, 0.6451612903225806, 0.03225806451612903]
+
+--------------------------------------------------
+
+File: History.jsonl
+Correctness Average: 3.1666666666666665
+Completeness Average: 3.891304347826087
+Innovation Average: 2.8526570048309177
+Reasoning Average: 3.9106280193236715
+Correct Rate: 0.6086956521739131
+Level Rate (大学, 高中, 其他): [0.34299516908212563, 0.6497584541062802, 0.004830917874396135]
+
+--------------------------------------------------
+
+File: Math.jsonl
+Correctness Average: 3.9148681055155876
+Completeness Average: 4.398081534772182
+Innovation Average: 3.0419664268585134
+Reasoning Average: 4.316546762589928
+Correct Rate: 0.5815347721822542
+Level Rate (大学, 高中, 其他): [0.017985611510791366, 0.9676258992805755, 0.014388489208633094]
+
+--------------------------------------------------
+
+File: Physics.jsonl
+Correctness Average: 3.618181818181818
+Completeness Average: 4.445454545454545
+Innovation Average: 3.1272727272727274
+Reasoning Average: 4.372727272727273
+Correct Rate: 0.5
+Level Rate (大学, 高中, 其他): [0.02727272727272727, 0.9727272727272728, 0.0]
+
+--------------------------------------------------
+
+File: Politics.jsonl
+Correctness Average: 3.4722955145118735
+Completeness Average: 4.4511873350923485
+Innovation Average: 3.071240105540897
+Reasoning Average: 4.45910290237467
+Correct Rate: 0.7730870712401056
+Level Rate (大学, 高中, 其他): [0.2691292875989446, 0.7255936675461742, 0.005277044854881266]
+
+--------------------------------------------------
+

@@ -83,5 +83,5 @@ def plot_radar_chart(df, subject_type, output_path):
     print(f"{subject_type}雷达图已保存到：{output_path}")
 
 # 分别绘制理科和文科的雷达图
-plot_radar_chart(df_science, "理科", "../data/6_graphs/S_science_average_time_radar_chart.png")
-plot_radar_chart(df_arts, "文科", "../data/6_graphs/A_arts_average_time_radar_chart.png")
+plot_radar_chart(df_science, "理科", "../data/6_graphs/23-24/S_science_average_time_radar_chart.png")
+plot_radar_chart(df_arts, "文科", "../data/6_graphs/23-24/A_arts_average_time_radar_chart.png")
