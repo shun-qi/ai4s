@@ -12,7 +12,7 @@ python 5_infer_with_api.py --model_name_or_path="dall-e-3" --input_path="../data
 python 5_infer_with_api.py --model_name_or_path="hunyuan-lite" --input_path="../data/3_QA_2/23-24/" --output_path="../data/4_infer_2_res/23-24/hunyuan-lite/" --call="vllm" &
 python 5_infer_with_api.py --model_name_or_path="Doubao-pro-4k" --input_path="../data/3_QA_2/23-24/" --output_path="../data/4_infer_2_res/23-24/Doubao-pro-4k/" --call="vllm" &
 
-
+python 5_infer_with_api.py --model_name_or_path="qwen2.5-7b-instruct" --input_path="../data/1_QA/23-24/" --output_path="../data/2_infer_res/23-24/qwen2.5-7b-instruct/" --call="vllm" & #简单prompt推理
 
 #python 5_infer_with_api.py --model_name_or_path="Yi-6B-200K" --input_path="../data/3_QA_2/" --output_path="../data/4_infer_2_res/Yi-6B-200K" --call="vllm"
 #python 5_infer_with_api.py --model_name_or_path="chatglm2-6b" --input_path="../data/3_QA_2/" --output_path="../data/4_infer_2_res/chatglm2-6b" --call="vllm"

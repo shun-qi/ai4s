@@ -2,8 +2,8 @@ import os
 import json
 
 # Input and output directories
-input_dir = "/Users/circle/PycharmProjects/AI4S/src/data/0_raw"
-output_dir = "/Users/circle/PycharmProjects/AI4S/src/data/1_QA"
+input_dir = "../data/0_raw/23-24"
+output_dir = "../data/1_QA/23-24"
 
 # Define a prompt template
 prompt_template = "你是一个{}专家，解决所给题目"
