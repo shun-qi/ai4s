@@ -1,6 +1,14 @@
 import os
 import json
+
+
 #用于提取处理好的json文件
+
+"""
+这个代码的主要功能是遍历一个文件夹中的所有子文件夹，
+读取并分析每个文件夹中的.jsonl文件，
+将评分信息汇总并保存到最终的 JSON 文件中
+"""
 def analyze_ratings(file_path):
     correctness_total = 0
     completeness_total = 0

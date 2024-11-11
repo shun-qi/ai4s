@@ -56,4 +56,4 @@ ModuleNotFoundError: No module named 'oss2'
 ! [rejected] main -> main (non-fast-forward)
 error: failed to push some refs to 'https://github.com/shun-qi/ai4s.git' hint: Updates were rejected because the tip of your current branch is behind hint: its remote
 
-因为本地没有最新版本的记录，先要pull，然后手动选择合并方式，再进行push
+因为本地没有最新版本的记录，先要pull，然后手动选择合并方式，再进行push：

@@ -3,14 +3,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import pi
 
+"""
+ModelAnalysis类主要完成绘制图形的数据加载初始化，包括各模型名称，学科名称等的获取
+
+初始化方法 __init__(self, json_path)：接受 JSON 文件路径，并加载数据。
+load_data 方法：读取并加载指定路径的 JSON 文件。
+get_metrics_for_model 方法：提取某个模型在所有科目上的指定指标，包括完整性、创新性、推理性和正确率。
+get_all_subjects 方法：获取所有科目名称。
+get_all_model 方法：获取所有模型名称。
+get_metrics_for_subject 方法：获取某个特定模型在某一科目的指标数据。
+get_ave_metrics 方法：计算某个模型在所有科目的平均指标（完整性、创新性、推理性和正确率）。
+
+"""
 class ModelAnalysis:
     def __init__(self, json_path):
         # 初始化类并加载JSON文件
         self.json_path = json_path
         self.data = self.load_data()
 
+
     def load_data(self):
         # 加载JSON数据
+    
         with open(self.json_path, 'r', encoding='utf-8') as f:
             return json.load(f)
 
@@ -74,6 +88,10 @@ class ModelAnalysis:
             average_metrics = sum_metrics  # 如果没有主体，则返回全0的结果
         
         return average_metrics
+#上面的类主要完成数据的加载
+#------------------------------------------------------------------------------------------------------------
+
+# 下面每一个方法就是画一个图
 def Comprehensive(analysis):
     for subject in analysis.get_all_subjects():
         plt.figure(figsize=(8, 8))
@@ -96,27 +114,58 @@ def Comprehensive(analysis):
         plt.ylim(0, max_range)  # 设置Y轴的最大值
         plt.legend(loc='upper right', bbox_to_anchor=(1.1, 1.1))
         plt.show()
-def Correctness2(analysis):
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import seaborn as sns
-    import pandas as pd
 
-    # 设置中文字体
-    plt.rcParams['font.sans-serif'] = ['SimHei']  # 黑体
-    plt.rcParams['axes.unicode_minus'] = False  # 显示负号
+#生成热力图
+def Correctness2(analysis):
+    # 导入需要的库
+    import matplotlib.pyplot as plt  # 用于绘制图表
+    import numpy as np  # 用于数值计算
+    import seaborn as sns  # 用于绘制统计图形，如热力图
+    import pandas as pd  # 用于数据处理和分析，特别是DataFrame数据结构
+
+    # 设置中文字体，以确保图表显示中文时不会出现乱码
+    plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置字体为黑体
+    plt.rcParams['axes.unicode_minus'] = False  # 设置显示负号（避免负号显示为方块）
+
+    # 获取所有模型名称
     models = analysis.get_all_model()
-    subjects = {subject: [] for subject in analysis.get_all_subjects()}
+
+    # 初始化一个字典，存储每个科目的正确率数据
+    subjects = {subject: [] for subject in analysis.get_all_subjects()}  # 创建一个空的列表以存储每个科目的数据
+
+    # 遍历所有模型，并为每个模型获取每个科目的正确率
+
     for model in models:
         for subject in analysis.get_all_subjects():
-            subjects[subject].append(analysis.get_metrics_for_subject(model,subject)[3])
+            # 获取每个模型在每个科目的正确率，使用索引[3]获取正确率（假设正确率是 metrics 的第四个值）
+            subjects[subject].append(analysis.get_metrics_for_subject(model, subject)[3])
+    """
+        上面执行后subjects情况例子：
+        subjects = {
+        "Math": [0.9, 0.85],   # Model1 和 Model2 的 Math 正确率
+        "English": [0.8, 0.75]  # Model1 和 Model2 的 English 正确率
+    }
+    热力图的生成是从左到右，从下向上生成的。就好像慢慢“堆起来”的一样
+        """
+
+    # 将数据转换为 Pandas DataFrame 以便绘制热力图
+    # DataFrame 的行索引为模型名，列索引为科目，值为每个模型在每个科目的正确率
+    #构建的DataFrame已经包含了x轴的标签，需要再传入y轴的标签models
     scores_df = pd.DataFrame(subjects, index=models)
-    # 2.4 表现矩阵热力图展示
+
+    # 设置绘图的尺寸，确保图表足够大以便清晰显示
     plt.figure(figsize=(10, 6))
+
+    # 使用 Seaborn 绘制热力图
+    # scores_df：传入 DataFrame 数据，annot=True：在热力图上标注数值，fmt=".2f"：显示两位小数，cmap="YlGnBu"：设置颜色映射（从黄色到蓝色）
     sns.heatmap(scores_df, annot=True, fmt=".2f", cmap="YlGnBu", cbar=True)
-    plt.title('模型在各科目上正确率表现')
-    plt.xlabel('维度')
-    plt.ylabel('模型')
+
+    # 设置热力图标题、横轴和纵轴标签
+    plt.title('模型在各科目上正确率表现')  # 标题
+    plt.xlabel('维度')  # 横轴标签（科目）
+    plt.ylabel('模型')  # 纵轴标签（模型）
+
+    # 调整布局，使得标签不会被截断
     plt.tight_layout()
 
     # 显示热力图
